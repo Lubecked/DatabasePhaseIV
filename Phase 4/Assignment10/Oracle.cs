@@ -23,7 +23,17 @@ namespace Assignment10
       internal static OracleCommand bookingCommand = new OracleCommand();
       internal static OracleCommandBuilder bookingCommandBuilder = new OracleCommandBuilder();
 
+      internal static OracleDataAdapter qualificationAdapter = new OracleDataAdapter();
+      internal static OracleCommand qualificationCommand = new OracleCommand();
+      internal static OracleCommandBuilder qualificationCommandBuilder = new OracleCommandBuilder();
+
+      internal static OracleDataAdapter exAdapter = new OracleDataAdapter();
+      internal static OracleCommand exCommand = new OracleCommand();
+      internal static OracleCommandBuilder exCommandBuilder = new OracleCommandBuilder();
+
       internal static DataTable myTable = new DataTable();
+      internal static DataTable qualTable = new DataTable();
+      internal static DataTable exTable = new DataTable();
 
       public static void LogInAtRunTime()
       {
@@ -35,12 +45,29 @@ namespace Assignment10
          OC.ConnectionString = "Data Source = " + Server + ";Persist Security Info=True;User ID=" + UserName + ";Password=" + PassWd + ";Unicode=True";
 
          bookingCommand.CommandType = CommandType.Text;
-         bookingCommand.CommandText = "Select * from booking";
+         bookingCommand.CommandText = "Select * from UWP_Staff";
          bookingCommand.Connection = OC;
 
          bookingAdapter.SelectCommand = bookingCommand;
          bookingCommandBuilder = new OracleCommandBuilder(bookingAdapter);
          bookingAdapter.Fill(myTable);
+
+         qualificationCommand.CommandType = CommandType.Text;
+         qualificationCommand.CommandText = "Select * from UWP_Qualifications";
+         qualificationCommand.Connection = OC;
+
+         bookingAdapter.SelectCommand = qualificationCommand;
+         bookingCommandBuilder = new OracleCommandBuilder(qualificationAdapter);
+         bookingAdapter.Fill(qualTable);
+
+         exCommand.CommandType = CommandType.Text;
+         exCommand.CommandText = "Select * from UWP_WorkExperience";
+         exCommand.Connection = OC;
+
+         bookingAdapter.SelectCommand = exCommand;
+         bookingCommandBuilder = new OracleCommandBuilder(exAdapter);
+         bookingAdapter.Fill(exTable);
+
       }
 
       public static void Main()
