@@ -57,8 +57,8 @@
          this.txtCurEmp = new System.Windows.Forms.TextBox();
          this.txtTypePay = new System.Windows.Forms.TextBox();
          this.lblTypePay = new System.Windows.Forms.Label();
-         this.txtPospermtemp = new System.Windows.Forms.TextBox();
-         this.lblProspermtemp = new System.Windows.Forms.Label();
+         this.txtPosPermTemp = new System.Windows.Forms.TextBox();
+         this.lblPosPermTemp = new System.Windows.Forms.Label();
          this.txtHours = new System.Windows.Forms.TextBox();
          this.lblHours = new System.Windows.Forms.Label();
          this.txtSalaryScale = new System.Windows.Forms.TextBox();
@@ -358,21 +358,21 @@
          this.lblTypePay.TabIndex = 118;
          this.lblTypePay.Text = "TYPEOFPAY:";
          // 
-         // txtPospermtemp
+         // txtPosPermTemp
          // 
-         this.txtPospermtemp.Location = new System.Drawing.Point(159, 461);
-         this.txtPospermtemp.Name = "txtPospermtemp";
-         this.txtPospermtemp.Size = new System.Drawing.Size(186, 20);
-         this.txtPospermtemp.TabIndex = 117;
+         this.txtPosPermTemp.Location = new System.Drawing.Point(159, 461);
+         this.txtPosPermTemp.Name = "txtPosPermTemp";
+         this.txtPosPermTemp.Size = new System.Drawing.Size(186, 20);
+         this.txtPosPermTemp.TabIndex = 117;
          // 
-         // lblProspermtemp
+         // lblPosPermTemp
          // 
-         this.lblProspermtemp.AutoSize = true;
-         this.lblProspermtemp.Location = new System.Drawing.Point(58, 465);
-         this.lblProspermtemp.Name = "lblProspermtemp";
-         this.lblProspermtemp.Size = new System.Drawing.Size(93, 13);
-         this.lblProspermtemp.TabIndex = 116;
-         this.lblProspermtemp.Text = "POSPERMTEMP:";
+         this.lblPosPermTemp.AutoSize = true;
+         this.lblPosPermTemp.Location = new System.Drawing.Point(58, 465);
+         this.lblPosPermTemp.Name = "lblPosPermTemp";
+         this.lblPosPermTemp.Size = new System.Drawing.Size(93, 13);
+         this.lblPosPermTemp.TabIndex = 116;
+         this.lblPosPermTemp.Text = "POSPERMTEMP:";
          // 
          // txtHours
          // 
@@ -859,8 +859,8 @@
          this.Controls.Add(this.txtCurEmp);
          this.Controls.Add(this.txtTypePay);
          this.Controls.Add(this.lblTypePay);
-         this.Controls.Add(this.txtPospermtemp);
-         this.Controls.Add(this.lblProspermtemp);
+         this.Controls.Add(this.txtPosPermTemp);
+         this.Controls.Add(this.lblPosPermTemp);
          this.Controls.Add(this.txtHours);
          this.Controls.Add(this.lblHours);
          this.Controls.Add(this.txtSalaryScale);
@@ -931,8 +931,8 @@
       private System.Windows.Forms.TextBox txtCurEmp;
       private System.Windows.Forms.TextBox txtTypePay;
       private System.Windows.Forms.Label lblTypePay;
-      private System.Windows.Forms.TextBox txtPospermtemp;
-      private System.Windows.Forms.Label lblProspermtemp;
+      private System.Windows.Forms.TextBox txtPosPermTemp;
+      private System.Windows.Forms.Label lblPosPermTemp;
       private System.Windows.Forms.TextBox txtHours;
       private System.Windows.Forms.Label lblHours;
       private System.Windows.Forms.TextBox txtSalaryScale;
