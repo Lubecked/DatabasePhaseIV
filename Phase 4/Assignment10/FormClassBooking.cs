@@ -12,6 +12,10 @@ namespace Assignment10
 {
    public partial class FormClassBooking : Form
    {
+
+      private BindingSource staffBindingSource = new BindingSource();
+      private BindingSource qualBindingSource = new BindingSource();
+      private BindingSource exBindingSource = new BindingSource();
       public FormClassBooking()
       {
          InitializeComponent();
@@ -19,31 +23,58 @@ namespace Assignment10
 
       private void FormClassBooking_Load(object sender, EventArgs e)
       {
-         txtStaffNo.DataBindings.Add("Text", Oracle.staffTable, "staffNo");
-         txtFName.DataBindings.Add("Text", Oracle.staffTable, "fName");
-         txtLName.DataBindings.Add("Text", Oracle.staffTable, "lName");
-         txtStreet.DataBindings.Add("Text", Oracle.staffTable, "street");
-         txtCity.DataBindings.Add("Text", Oracle.staffTable, "city");
-         txtState.DataBindings.Add("Text", Oracle.staffTable, "state");
-         txtZIP.DataBindings.Add("Text", Oracle.staffTable, "zip");
-         txtPhone.DataBindings.Add("Text", Oracle.staffTable, "phone");
-         dtpDOB.DataBindings.Add("Text", Oracle.staffTable, "DOB");
-         txtGender.DataBindings.Add("Text", Oracle.staffTable, "gender");
-         txtNIN.DataBindings.Add("Text", Oracle.staffTable, "NIN");
-         txtPosition.DataBindings.Add("Text", Oracle.staffTable, "position");
-         txtCurSalary.DataBindings.Add("Text", Oracle.staffTable, "curSalary");
-         txtSalaryScale.DataBindings.Add("Text", Oracle.staffTable, "salaryScale");
-         txtHours.DataBindings.Add("Text", Oracle.staffTable, "hrsPerWk");
-         txtPosPermTemp.DataBindings.Add("Text", Oracle.staffTable, "posPermTemp");
-         txtTypePay.DataBindings.Add("Text", Oracle.staffTable, "typeOfPay");
-         dtpQualDate.DataBindings.Add("Text", Oracle.qualTable, "qualDate");
-         txtType.DataBindings.Add("Text", Oracle.qualTable, "type");
-         txtInstName.DataBindings.Add("Text", Oracle.qualTable, "instName");
-         txtOrgName.DataBindings.Add("Text", Oracle.exTable, "orgName");
-         txtPositionExp.DataBindings.Add("Text", Oracle.exTable, "position");
-         dtpStartDate.DataBindings.Add("Text", Oracle.exTable, "startDate");
-         dtpFinDate.DataBindings.Add("Text", Oracle.exTable, "finishDate");
+         staffBindingSource.DataSource = Oracle.staffTable;
+         qualBindingSource.DataSource = Oracle.qualTable;
+         exBindingSource.DataSource = Oracle.exTable;
+
+         txtStaffNo.DataBindings.Add("Text", staffBindingSource, "staffNo");
+         txtFName.DataBindings.Add("Text", staffBindingSource, "fName");
+         txtLName.DataBindings.Add("Text", staffBindingSource, "lName");
+         txtStreet.DataBindings.Add("Text", staffBindingSource, "street");
+         txtCity.DataBindings.Add("Text", staffBindingSource, "city");
+         txtState.DataBindings.Add("Text", staffBindingSource, "state");
+         txtZIP.DataBindings.Add("Text", staffBindingSource, "zip");
+         txtPhone.DataBindings.Add("Text", staffBindingSource, "phone");
+         dtpDOB.DataBindings.Add("Text", staffBindingSource, "DOB");
+         txtGender.DataBindings.Add("Text", staffBindingSource, "gender");
+         txtNIN.DataBindings.Add("Text", staffBindingSource, "NIN");
+         txtPosition.DataBindings.Add("Text", staffBindingSource, "position");
+         txtCurSalary.DataBindings.Add("Text", staffBindingSource, "curSalary");
+         txtSalaryScale.DataBindings.Add("Text", staffBindingSource, "salaryScale");
+         txtHours.DataBindings.Add("Text", staffBindingSource, "hrsPerWk");
+         txtPosPermTemp.DataBindings.Add("Text", staffBindingSource, "posPermTemp");
+         txtTypePay.DataBindings.Add("Text", staffBindingSource, "typeOfPay");
+         dtpQualDate.DataBindings.Add("Text", qualBindingSource, "qualDate");
+         txtType.DataBindings.Add("Text", qualBindingSource, "type");
+         txtInstName.DataBindings.Add("Text", qualBindingSource, "instName");
+         txtOrgName.DataBindings.Add("Text", exBindingSource, "orgName");
+         txtPositionExp.DataBindings.Add("Text", exBindingSource, "position");
+         dtpStartDate.DataBindings.Add("Text", exBindingSource, "startDate");
+         dtpFinDate.DataBindings.Add("Text", exBindingSource, "finishDate");
       }
-      
+
+      private void btnNextEmp_Click(object sender, EventArgs e)
+      {
+         staffBindingSource.MoveNext();
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+      }
+
+      private void btnPrevEmp_Click(object sender, EventArgs e)
+      {
+         staffBindingSource.MovePrevious();
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+      }
+
+      private void btnLastEmp_Click(object sender, EventArgs e)
+      {
+         staffBindingSource.Position = staffBindingSource.Count - 1;
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+      }
+
+      private void btnFirstEmp_Click(object sender, EventArgs e)
+      {
+         staffBindingSource.Position = 0;
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+      }
    }
 }

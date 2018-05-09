@@ -19,6 +19,7 @@ namespace Assignment10
       internal static ResponseType Result;
 
       internal static OracleConnection OC = new OracleConnection();
+
       internal static OracleDataAdapter staffAdapter = new OracleDataAdapter();
       internal static OracleCommand staffCommand = new OracleCommand();
       internal static OracleCommandBuilder staffCommandBuilder = new OracleCommandBuilder();
@@ -52,8 +53,10 @@ namespace Assignment10
          staffCommandBuilder = new OracleCommandBuilder(staffAdapter);
          staffAdapter.Fill(staffTable);
 
+         string staffNo = staffTable.Rows[0]["StaffNo"].ToString();
+
          qualificationCommand.CommandType = CommandType.Text;
-         qualificationCommand.CommandText = "Select * from UWP_Qualifications";
+         qualificationCommand.CommandText = "Select * from UWP_Qualifications where staffNo = '" + staffNo + "'";
          qualificationCommand.Connection = OC;
 
          staffAdapter.SelectCommand = qualificationCommand;
@@ -61,13 +64,12 @@ namespace Assignment10
          staffAdapter.Fill(qualTable);
 
          exCommand.CommandType = CommandType.Text;
-         exCommand.CommandText = "Select * from UWP_WorkExperience";
+         exCommand.CommandText = "Select * from UWP_WorkExperience where staffNo = '" + staffNo + "'";
          exCommand.Connection = OC;
 
          staffAdapter.SelectCommand = exCommand;
          staffCommandBuilder = new OracleCommandBuilder(exAdapter);
          staffAdapter.Fill(exTable);
-
       }
 
       public static void Main()

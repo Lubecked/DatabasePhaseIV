@@ -307,6 +307,7 @@
          this.btnFirstEmp.TabIndex = 124;
          this.btnFirstEmp.Text = "|<";
          this.btnFirstEmp.UseVisualStyleBackColor = true;
+         this.btnFirstEmp.Click += new System.EventHandler(this.btnFirstEmp_Click);
          // 
          // btnLastEmp
          // 
@@ -316,6 +317,7 @@
          this.btnLastEmp.TabIndex = 123;
          this.btnLastEmp.Text = ">|";
          this.btnLastEmp.UseVisualStyleBackColor = true;
+         this.btnLastEmp.Click += new System.EventHandler(this.btnLastEmp_Click);
          // 
          // btnPrevEmp
          // 
@@ -325,6 +327,7 @@
          this.btnPrevEmp.TabIndex = 122;
          this.btnPrevEmp.Text = "<";
          this.btnPrevEmp.UseVisualStyleBackColor = true;
+         this.btnPrevEmp.Click += new System.EventHandler(this.btnPrevEmp_Click);
          // 
          // btnNextEmp
          // 
@@ -334,6 +337,7 @@
          this.btnNextEmp.TabIndex = 121;
          this.btnNextEmp.Text = ">";
          this.btnNextEmp.UseVisualStyleBackColor = true;
+         this.btnNextEmp.Click += new System.EventHandler(this.btnNextEmp_Click);
          // 
          // txtCurEmp
          // 
