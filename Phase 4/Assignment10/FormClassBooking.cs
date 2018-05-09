@@ -47,9 +47,9 @@ namespace Assignment10
       {
          Oracle.myTable.Clear();
 
-         string field = comboBox1.Text;
-         string op = comboBox2.Text;
-         string value = textBox1.Text;
+         string field = cmbDOB.Text;
+         string op = cmbQualDate.Text;
+         string value = txtStaffNo.Text;
 
          //for non date things
          if (field != "DATE_TO" && field != "DATE_FROM")
