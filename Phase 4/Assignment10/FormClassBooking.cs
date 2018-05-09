@@ -34,6 +34,13 @@ namespace Assignment10
          }
       }
 
+      private void RefreshNums()
+      {
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         txtCurQual.Text = (qualBindingSource.Position + 1) + "/" + qualBindingSource.Count;
+         txtCurExp.Text = (exBindingSource.Position + 1) + "/" + exBindingSource.Count;
+      }
+
       private void FormClassBooking_Load(object sender, EventArgs e)
       {
          staffBindingSource.DataSource = Oracle.staffTable;
@@ -65,35 +72,88 @@ namespace Assignment10
          dtpStartDate.DataBindings.Add("Text", exBindingSource, "startDate");
          dtpFinDate.DataBindings.Add("Text", exBindingSource, "finishDate");
 
-         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         RefreshNums();
       }
 
       private void btnNextEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.MoveNext();
-         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          LoadQualWorkForStaff();
+         RefreshNums();
       }
 
       private void btnPrevEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.MovePrevious();
-         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          LoadQualWorkForStaff();
+         RefreshNums();
       }
 
       private void btnLastEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.Position = staffBindingSource.Count - 1;
-         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          LoadQualWorkForStaff();
+         RefreshNums();
       }
 
       private void btnFirstEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.Position = 0;
-         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          LoadQualWorkForStaff();
+         RefreshNums();
+      }
+      private void btnNextQual_Click(object sender, EventArgs e)
+      {
+         qualBindingSource.MoveNext();
+         RefreshNums();
+      }
+
+      private void btnPrevQual_Click(object sender, EventArgs e)
+      {
+         qualBindingSource.MovePrevious();
+         RefreshNums();
+      }
+
+      private void btnLastQual_Click(object sender, EventArgs e)
+      {
+         qualBindingSource.Position = qualBindingSource.Count - 1;
+         RefreshNums();
+      }
+
+      private void btnFirstQual_Click(object sender, EventArgs e)
+      {
+         qualBindingSource.Position = 0;
+         RefreshNums();
+      }
+
+      private void btnNextExp_Click(object sender, EventArgs e)
+      {
+         exBindingSource.MoveNext();
+         RefreshNums();
+      }
+
+      private void btnPrevExp_Click(object sender, EventArgs e)
+      {
+         exBindingSource.MovePrevious();
+         RefreshNums();
+      }
+
+      private void btnLastExp_Click(object sender, EventArgs e)
+      {
+         exBindingSource.Position = exBindingSource.Count - 1;
+         RefreshNums();
+      }
+
+      private void btnFirstExp_Click(object sender, EventArgs e)
+      {
+         exBindingSource.Position = 0;
+         RefreshNums();
+      }
+
+      private void btnSearchAll_Click(object sender, EventArgs e)
+      {
+         Oracle.LoadAll();
+         RefreshNums();
       }
 
       private void btnNewEmp_Click(object sender, EventArgs e)

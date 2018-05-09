@@ -105,6 +105,20 @@ namespace Assignment10
          qualificationAdapter.Fill(qualTable);
          exAdapter.Fill(exTable);
       }
+
+      public static void LoadAll()
+      {
+         staffCommand.CommandText = "Select * from UWP_Staff";
+         staffTable.Clear();
+         staffAdapter.Fill(staffTable);
+         string staffNo = staffTable.Rows[0]["StaffNo"].ToString();
+         qualificationCommand.CommandText = "Select * from UWP_Qualifications where staffNo = '" + staffNo + "'";
+         exCommand.CommandText = "Select * from UWP_WorkExperience where staffNo = '" + staffNo + "'";
+         qualTable.Clear();
+         exTable.Clear();
+         qualificationAdapter.Fill(qualTable);
+         exAdapter.Fill(exTable);
+      }
    }
    /*
    The pseudo code of Sub Main could be as follows:
