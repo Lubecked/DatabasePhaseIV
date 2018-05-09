@@ -95,5 +95,39 @@ namespace Assignment10
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          LoadQualWorkForStaff();
       }
+
+      private void btnNewEmp_Click(object sender, EventArgs e)
+      {
+         DataRow r = Oracle.staffTable.NewRow();
+         Oracle.staffTable.Rows.Add(r);
+         staffBindingSource.MoveLast();
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+      }
+
+      private void btnSaveEmp_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            staffBindingSource.EndEdit();
+            Oracle.staffAdapter.Update(Oracle.staffTable);
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnDeleteEmp_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            staffBindingSource.RemoveCurrent();
+            txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+      }
    }
 }

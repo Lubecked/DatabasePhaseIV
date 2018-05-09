@@ -280,6 +280,7 @@
          this.btnDeleteEmp.TabIndex = 127;
          this.btnDeleteEmp.Text = "Delete";
          this.btnDeleteEmp.UseVisualStyleBackColor = true;
+         this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
          // 
          // btnSaveEmp
          // 
@@ -289,6 +290,7 @@
          this.btnSaveEmp.TabIndex = 126;
          this.btnSaveEmp.Text = "Save";
          this.btnSaveEmp.UseVisualStyleBackColor = true;
+         this.btnSaveEmp.Click += new System.EventHandler(this.btnSaveEmp_Click);
          // 
          // btnNewEmp
          // 
@@ -298,6 +300,7 @@
          this.btnNewEmp.TabIndex = 125;
          this.btnNewEmp.Text = "New";
          this.btnNewEmp.UseVisualStyleBackColor = true;
+         this.btnNewEmp.Click += new System.EventHandler(this.btnNewEmp_Click);
          // 
          // btnFirstEmp
          // 
