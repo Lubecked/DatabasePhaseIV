@@ -59,17 +59,17 @@ namespace Assignment10
          qualificationCommand.CommandText = "Select * from UWP_Qualifications where staffNo = '" + staffNo + "'";
          qualificationCommand.Connection = OC;
 
-         staffAdapter.SelectCommand = qualificationCommand;
-         staffCommandBuilder = new OracleCommandBuilder(qualificationAdapter);
-         staffAdapter.Fill(qualTable);
+         qualificationAdapter.SelectCommand = qualificationCommand;
+         qualificationCommandBuilder = new OracleCommandBuilder(qualificationAdapter);
+         qualificationAdapter.Fill(qualTable);
 
          exCommand.CommandType = CommandType.Text;
          exCommand.CommandText = "Select * from UWP_WorkExperience where staffNo = '" + staffNo + "'";
          exCommand.Connection = OC;
 
-         staffAdapter.SelectCommand = exCommand;
-         staffCommandBuilder = new OracleCommandBuilder(exAdapter);
-         staffAdapter.Fill(exTable);
+         exAdapter.SelectCommand = exCommand;
+         exCommandBuilder = new OracleCommandBuilder(exAdapter);
+         exAdapter.Fill(exTable);
       }
 
       public static void Main()
@@ -96,6 +96,15 @@ namespace Assignment10
             System.Windows.Forms.Application.Run(new FormClassBooking());
       }
 
+      public static void LoadQualWorkTable(string staffNo)
+      {
+         qualificationCommand.CommandText = "Select * from UWP_Qualifications where staffNo = '" + staffNo + "'";
+         exCommand.CommandText = "Select * from UWP_WorkExperience where staffNo = '" + staffNo + "'";
+         qualTable.Clear();
+         exTable.Clear();
+         qualificationAdapter.Fill(qualTable);
+         exAdapter.Fill(exTable);
+      }
    }
    /*
    The pseudo code of Sub Main could be as follows:

@@ -21,6 +21,19 @@ namespace Assignment10
          InitializeComponent();
       }
 
+      private void LoadQualWorkForStaff()
+      {
+         try
+         {
+            string staffNo = Oracle.staffTable.Rows[staffBindingSource.Position]["StaffNo"].ToString();
+            Oracle.LoadQualWorkTable(staffNo);
+         }
+         catch (System.Exception ex)
+         {
+            MessageBox.Show(ex.Message);
+         }
+      }
+
       private void FormClassBooking_Load(object sender, EventArgs e)
       {
          staffBindingSource.DataSource = Oracle.staffTable;
@@ -51,30 +64,36 @@ namespace Assignment10
          txtPositionExp.DataBindings.Add("Text", exBindingSource, "position");
          dtpStartDate.DataBindings.Add("Text", exBindingSource, "startDate");
          dtpFinDate.DataBindings.Add("Text", exBindingSource, "finishDate");
+
+         txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
       }
 
       private void btnNextEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.MoveNext();
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         LoadQualWorkForStaff();
       }
 
       private void btnPrevEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.MovePrevious();
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         LoadQualWorkForStaff();
       }
 
       private void btnLastEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.Position = staffBindingSource.Count - 1;
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         LoadQualWorkForStaff();
       }
 
       private void btnFirstEmp_Click(object sender, EventArgs e)
       {
          staffBindingSource.Position = 0;
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
+         LoadQualWorkForStaff();
       }
    }
 }
