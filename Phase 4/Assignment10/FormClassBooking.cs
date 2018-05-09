@@ -36,6 +36,13 @@ namespace Assignment10
          txtHours.DataBindings.Add("Text", Oracle.staffTable, "hrsPerWk");
          txtPosPermTemp.DataBindings.Add("Text", Oracle.staffTable, "posPermTemp");
          txtTypePay.DataBindings.Add("Text", Oracle.staffTable, "typeOfPay");
+         dtpQualDate.DataBindings.Add("Text", Oracle.qualTable, "qualDate");
+         txtType.DataBindings.Add("Text", Oracle.qualTable, "type");
+         txtInstName.DataBindings.Add("Text", Oracle.qualTable, "instName");
+         txtOrgName.DataBindings.Add("Text", Oracle.exTable, "orgName");
+         txtPositionExp.DataBindings.Add("Text", Oracle.exTable, "position");
+         dtpStartDate.DataBindings.Add("Text", Oracle.exTable, "startDate");
+         dtpFinDate.DataBindings.Add("Text", Oracle.exTable, "finishDate");
       }
       
    }
