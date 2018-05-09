@@ -36,9 +36,7 @@
          this.lblValue = new System.Windows.Forms.Label();
          this.cmbField = new System.Windows.Forms.ComboBox();
          this.lblField = new System.Windows.Forms.Label();
-         this.cmbFinDate = new System.Windows.Forms.ComboBox();
          this.lblFinDate = new System.Windows.Forms.Label();
-         this.cmbStartDate = new System.Windows.Forms.ComboBox();
          this.lblStartDate = new System.Windows.Forms.Label();
          this.txtPositionExp = new System.Windows.Forms.TextBox();
          this.lblPositionExp = new System.Windows.Forms.Label();
@@ -48,7 +46,6 @@
          this.lblInstName = new System.Windows.Forms.Label();
          this.txtType = new System.Windows.Forms.TextBox();
          this.lblType = new System.Windows.Forms.Label();
-         this.cmbQualDate = new System.Windows.Forms.ComboBox();
          this.lblQualDate = new System.Windows.Forms.Label();
          this.btnDeleteEmp = new System.Windows.Forms.Button();
          this.btnSaveEmp = new System.Windows.Forms.Button();
@@ -74,7 +71,6 @@
          this.lblNIN = new System.Windows.Forms.Label();
          this.txtGender = new System.Windows.Forms.TextBox();
          this.lblGender = new System.Windows.Forms.Label();
-         this.cmbDOB = new System.Windows.Forms.ComboBox();
          this.lblDOB = new System.Windows.Forms.Label();
          this.txtPhone = new System.Windows.Forms.TextBox();
          this.lblPhone = new System.Windows.Forms.Label();
@@ -110,6 +106,10 @@
          this.btnPrevExp = new System.Windows.Forms.Button();
          this.btnNextExp = new System.Windows.Forms.Button();
          this.txtCurExp = new System.Windows.Forms.TextBox();
+         this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+         this.dtpQualDate = new System.Windows.Forms.DateTimePicker();
+         this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+         this.dtpFinDate = new System.Windows.Forms.DateTimePicker();
          this.SuspendLayout();
          // 
          // lblHeader2
@@ -181,14 +181,6 @@
          this.lblField.TabIndex = 158;
          this.lblField.Text = "Field";
          // 
-         // cmbFinDate
-         // 
-         this.cmbFinDate.FormattingEnabled = true;
-         this.cmbFinDate.Location = new System.Drawing.Point(575, 384);
-         this.cmbFinDate.Name = "cmbFinDate";
-         this.cmbFinDate.Size = new System.Drawing.Size(186, 21);
-         this.cmbFinDate.TabIndex = 149;
-         // 
          // lblFinDate
          // 
          this.lblFinDate.AutoSize = true;
@@ -197,14 +189,6 @@
          this.lblFinDate.Size = new System.Drawing.Size(74, 13);
          this.lblFinDate.TabIndex = 148;
          this.lblFinDate.Text = "FINISHDATE:";
-         // 
-         // cmbStartDate
-         // 
-         this.cmbStartDate.FormattingEnabled = true;
-         this.cmbStartDate.Location = new System.Drawing.Point(575, 357);
-         this.cmbStartDate.Name = "cmbStartDate";
-         this.cmbStartDate.Size = new System.Drawing.Size(186, 21);
-         this.cmbStartDate.TabIndex = 147;
          // 
          // lblStartDate
          // 
@@ -278,14 +262,6 @@
          this.lblType.Size = new System.Drawing.Size(38, 13);
          this.lblType.TabIndex = 130;
          this.lblType.Text = "TYPE:";
-         // 
-         // cmbQualDate
-         // 
-         this.cmbQualDate.FormattingEnabled = true;
-         this.cmbQualDate.Location = new System.Drawing.Point(575, 71);
-         this.cmbQualDate.Name = "cmbQualDate";
-         this.cmbQualDate.Size = new System.Drawing.Size(186, 21);
-         this.cmbQualDate.TabIndex = 129;
          // 
          // lblQualDate
          // 
@@ -493,14 +469,6 @@
          this.lblGender.Size = new System.Drawing.Size(56, 13);
          this.lblGender.TabIndex = 104;
          this.lblGender.Text = "GENDER:";
-         // 
-         // cmbDOB
-         // 
-         this.cmbDOB.FormattingEnabled = true;
-         this.cmbDOB.Location = new System.Drawing.Point(159, 279);
-         this.cmbDOB.Name = "cmbDOB";
-         this.cmbDOB.Size = new System.Drawing.Size(186, 21);
-         this.cmbDOB.TabIndex = 103;
          // 
          // lblDOB
          // 
@@ -797,11 +765,55 @@
          this.txtCurExp.Size = new System.Drawing.Size(45, 20);
          this.txtCurExp.TabIndex = 174;
          // 
+         // dtpDOB
+         // 
+         this.dtpDOB.Cursor = System.Windows.Forms.Cursors.Default;
+         this.dtpDOB.CustomFormat = "dd/MM/yyyy";
+         this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+         this.dtpDOB.Location = new System.Drawing.Point(159, 279);
+         this.dtpDOB.Name = "dtpDOB";
+         this.dtpDOB.Size = new System.Drawing.Size(186, 20);
+         this.dtpDOB.TabIndex = 182;
+         // 
+         // dtpQualDate
+         // 
+         this.dtpQualDate.Cursor = System.Windows.Forms.Cursors.Default;
+         this.dtpQualDate.CustomFormat = "dd/MM/yyyy";
+         this.dtpQualDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+         this.dtpQualDate.Location = new System.Drawing.Point(575, 71);
+         this.dtpQualDate.Name = "dtpQualDate";
+         this.dtpQualDate.Size = new System.Drawing.Size(186, 20);
+         this.dtpQualDate.TabIndex = 183;
+         // 
+         // dtpStartDate
+         // 
+         this.dtpStartDate.Cursor = System.Windows.Forms.Cursors.Default;
+         this.dtpStartDate.CustomFormat = "dd/MM/yyyy";
+         this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+         this.dtpStartDate.Location = new System.Drawing.Point(575, 358);
+         this.dtpStartDate.Name = "dtpStartDate";
+         this.dtpStartDate.Size = new System.Drawing.Size(186, 20);
+         this.dtpStartDate.TabIndex = 184;
+         // 
+         // dtpFinDate
+         // 
+         this.dtpFinDate.Cursor = System.Windows.Forms.Cursors.Default;
+         this.dtpFinDate.CustomFormat = "dd/MM/yyyy";
+         this.dtpFinDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+         this.dtpFinDate.Location = new System.Drawing.Point(575, 383);
+         this.dtpFinDate.Name = "dtpFinDate";
+         this.dtpFinDate.Size = new System.Drawing.Size(186, 20);
+         this.dtpFinDate.TabIndex = 185;
+         // 
          // FormClassBooking
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(818, 663);
+         this.Controls.Add(this.dtpFinDate);
+         this.Controls.Add(this.dtpStartDate);
+         this.Controls.Add(this.dtpQualDate);
+         this.Controls.Add(this.dtpDOB);
          this.Controls.Add(this.btnDeleteExp);
          this.Controls.Add(this.btnSaveExp);
          this.Controls.Add(this.btnNewExp);
@@ -826,9 +838,7 @@
          this.Controls.Add(this.lblValue);
          this.Controls.Add(this.cmbField);
          this.Controls.Add(this.lblField);
-         this.Controls.Add(this.cmbFinDate);
          this.Controls.Add(this.lblFinDate);
-         this.Controls.Add(this.cmbStartDate);
          this.Controls.Add(this.lblStartDate);
          this.Controls.Add(this.txtPositionExp);
          this.Controls.Add(this.lblPositionExp);
@@ -838,7 +848,6 @@
          this.Controls.Add(this.lblInstName);
          this.Controls.Add(this.txtType);
          this.Controls.Add(this.lblType);
-         this.Controls.Add(this.cmbQualDate);
          this.Controls.Add(this.lblQualDate);
          this.Controls.Add(this.btnDeleteEmp);
          this.Controls.Add(this.btnSaveEmp);
@@ -864,7 +873,6 @@
          this.Controls.Add(this.lblNIN);
          this.Controls.Add(this.txtGender);
          this.Controls.Add(this.lblGender);
-         this.Controls.Add(this.cmbDOB);
          this.Controls.Add(this.lblDOB);
          this.Controls.Add(this.txtPhone);
          this.Controls.Add(this.lblPhone);
@@ -902,9 +910,7 @@
       private System.Windows.Forms.Label lblValue;
       private System.Windows.Forms.ComboBox cmbField;
       private System.Windows.Forms.Label lblField;
-      private System.Windows.Forms.ComboBox cmbFinDate;
       private System.Windows.Forms.Label lblFinDate;
-      private System.Windows.Forms.ComboBox cmbStartDate;
       private System.Windows.Forms.Label lblStartDate;
       private System.Windows.Forms.TextBox txtPositionExp;
       private System.Windows.Forms.Label lblPositionExp;
@@ -914,7 +920,6 @@
       private System.Windows.Forms.Label lblInstName;
       private System.Windows.Forms.TextBox txtType;
       private System.Windows.Forms.Label lblType;
-      private System.Windows.Forms.ComboBox cmbQualDate;
       private System.Windows.Forms.Label lblQualDate;
       private System.Windows.Forms.Button btnDeleteEmp;
       private System.Windows.Forms.Button btnSaveEmp;
@@ -940,7 +945,6 @@
       private System.Windows.Forms.Label lblNIN;
       private System.Windows.Forms.TextBox txtGender;
       private System.Windows.Forms.Label lblGender;
-      private System.Windows.Forms.ComboBox cmbDOB;
       private System.Windows.Forms.Label lblDOB;
       private System.Windows.Forms.TextBox txtPhone;
       private System.Windows.Forms.Label lblPhone;
@@ -976,5 +980,9 @@
       private System.Windows.Forms.Button btnPrevExp;
       private System.Windows.Forms.Button btnNextExp;
       private System.Windows.Forms.TextBox txtCurExp;
+      private System.Windows.Forms.DateTimePicker dtpDOB;
+      private System.Windows.Forms.DateTimePicker dtpQualDate;
+      private System.Windows.Forms.DateTimePicker dtpStartDate;
+      private System.Windows.Forms.DateTimePicker dtpFinDate;
    }
 }
