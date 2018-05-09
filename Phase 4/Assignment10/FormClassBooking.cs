@@ -39,6 +39,75 @@ namespace Assignment10
          txtCurEmp.Text = (staffBindingSource.Position + 1) + "/" + staffBindingSource.Count;
          txtCurQual.Text = (qualBindingSource.Position + 1) + "/" + qualBindingSource.Count;
          txtCurExp.Text = (exBindingSource.Position + 1) + "/" + exBindingSource.Count;
+
+         btnNextEmp.Enabled = true;
+         btnLastEmp.Enabled = true;
+         btnPrevEmp.Enabled = true;
+         btnFirstEmp.Enabled = true;
+
+         btnNextQual.Enabled = true;
+         btnLastQual.Enabled = true;
+         btnPrevQual.Enabled = true;
+         btnFirstQual.Enabled = true;
+
+         btnNextExp.Enabled = true;
+         btnLastExp.Enabled = true;
+         btnPrevExp.Enabled = true;
+         btnFirstExp.Enabled = true;
+
+         if (staffBindingSource.Position == staffBindingSource.Count - 1)
+         {
+            btnNextEmp.Enabled = false;
+            btnLastEmp.Enabled = false;
+         }
+         if(staffBindingSource.Position == 0)
+         {
+            btnPrevEmp.Enabled = false;
+            btnFirstEmp.Enabled = false;
+         }
+         if(staffBindingSource.Count == 0)
+         {
+            btnNextEmp.Enabled = false;
+            btnLastEmp.Enabled = false;
+            btnPrevEmp.Enabled = false;
+            btnFirstEmp.Enabled = false;
+         }
+
+         if (qualBindingSource.Position == qualBindingSource.Count - 1)
+         {
+            btnNextQual.Enabled = false;
+            btnLastQual.Enabled = false;
+         }
+         if (qualBindingSource.Position == 0)
+         {
+            btnPrevQual.Enabled = false;
+            btnFirstQual.Enabled = false;
+         }
+         if(qualBindingSource.Count == 0)
+         {
+            btnNextQual.Enabled = false;
+            btnLastQual.Enabled = false;
+            btnPrevQual.Enabled = false;
+            btnFirstQual.Enabled = false;
+         }
+
+         if (exBindingSource.Position == exBindingSource.Count - 1)
+         {
+            btnNextExp.Enabled = false;
+            btnLastExp.Enabled = false;
+         }
+         if (exBindingSource.Position == 0)
+         {
+            btnPrevExp.Enabled = false;
+            btnFirstExp.Enabled = false;
+         }
+         if(exBindingSource.Count == 0)
+         {
+            btnNextExp.Enabled = false;
+            btnLastExp.Enabled = false;
+            btnPrevExp.Enabled = false;
+            btnFirstExp.Enabled = false;
+         }
       }
 
       private void FormClassBooking_Load(object sender, EventArgs e)
@@ -154,6 +223,10 @@ namespace Assignment10
       {
          Oracle.LoadAll();
          RefreshNums();
+      }
+      private void btnExit_Click(object sender, EventArgs e)
+      {
+         Application.Exit();
       }
 
       private void btnNewEmp_Click(object sender, EventArgs e)
