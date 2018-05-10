@@ -270,13 +270,13 @@ namespace Assignment10
          try
          {
             staffBindingSource.RemoveCurrent();
+            Oracle.staffAdapter.Update(Oracle.staffTable);
             RefreshNums();
          }
          catch (System.Exception ex)
          {
             System.Windows.Forms.MessageBox.Show(ex.Message);
          }
-         btnSaveEmp_Click(null, null);
       }
 
       private void btnNewQual_Click(object sender, EventArgs e)
@@ -309,13 +309,13 @@ namespace Assignment10
          try
          {
             qualBindingSource.RemoveCurrent();
+            Oracle.qualificationAdapter.Update(Oracle.qualTable);
             RefreshNums();
          }
          catch (System.Exception ex)
          {
             System.Windows.Forms.MessageBox.Show(ex.Message);
          }
-         btnSaveQual_Click(null, null);
       }
 
       private void btnNewExp_Click(object sender, EventArgs e)
@@ -348,13 +348,13 @@ namespace Assignment10
          try
          {
             exBindingSource.RemoveCurrent();
+            Oracle.exAdapter.Update(Oracle.exTable);
             RefreshNums();
          }
          catch (System.Exception ex)
          {
             System.Windows.Forms.MessageBox.Show(ex.Message);
          }
-         btnSaveExp_Click(null, null);
       }
 
       private void Disable_Buttons(char c)
