@@ -1,6 +1,6 @@
 ﻿namespace Assignment10
 {
-   partial class FormClassBooking
+   partial class FormClassEditor
    {
       /// <summary>
       /// Required designer variable.

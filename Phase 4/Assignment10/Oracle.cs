@@ -93,7 +93,7 @@ namespace Assignment10
                }
          }
          if (connected)
-            System.Windows.Forms.Application.Run(new FormClassBooking());
+            System.Windows.Forms.Application.Run(new FormClassEditor());
       }
 
       public static void LoadQualWorkTable(string staffNo)

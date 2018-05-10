@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Assignment10
 {
-   public partial class FormClassBooking : Form
+   public partial class FormClassEditor : Form
    {
 
       private BindingSource staffBindingSource = new BindingSource();
       private BindingSource qualBindingSource = new BindingSource();
       private BindingSource exBindingSource = new BindingSource();
-      public FormClassBooking()
+      public FormClassEditor()
       {
          InitializeComponent();
       }

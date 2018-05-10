@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormClassBooking.cs">
+    <Compile Include="FormClassEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClassBooking.Designer.cs">
-      <DependentUpon>FormClassBooking.cs</DependentUpon>
+    <Compile Include="FormClassEditor.Designer.cs">
+      <DependentUpon>FormClassEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormClassLogin.cs">
       <SubType>Form</SubType>
@@ -64,8 +64,8 @@
     </Compile>
     <Compile Include="Oracle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormClassBooking.resx">
-      <DependentUpon>FormClassBooking.cs</DependentUpon>
+    <EmbeddedResource Include="FormClassEditor.resx">
+      <DependentUpon>FormClassEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClassLogin.resx">
       <DependentUpon>FormClassLogin.cs</DependentUpon>
