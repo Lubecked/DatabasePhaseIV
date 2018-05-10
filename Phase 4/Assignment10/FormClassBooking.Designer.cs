@@ -642,6 +642,7 @@
          this.btnDeleteQual.TabIndex = 173;
          this.btnDeleteQual.Text = "Delete";
          this.btnDeleteQual.UseVisualStyleBackColor = true;
+         this.btnDeleteQual.Click += new System.EventHandler(this.btnDeleteQual_Click);
          // 
          // btnSaveQual
          // 
@@ -651,6 +652,7 @@
          this.btnSaveQual.TabIndex = 172;
          this.btnSaveQual.Text = "Save";
          this.btnSaveQual.UseVisualStyleBackColor = true;
+         this.btnSaveQual.Click += new System.EventHandler(this.btnSaveQual_Click);
          // 
          // btnNewQual
          // 
@@ -660,6 +662,7 @@
          this.btnNewQual.TabIndex = 171;
          this.btnNewQual.Text = "New";
          this.btnNewQual.UseVisualStyleBackColor = true;
+         this.btnNewQual.Click += new System.EventHandler(this.btnNewQual_Click);
          // 
          // btnFirstQual
          // 
@@ -716,6 +719,7 @@
          this.btnDeleteExp.TabIndex = 181;
          this.btnDeleteExp.Text = "Delete";
          this.btnDeleteExp.UseVisualStyleBackColor = true;
+         this.btnDeleteExp.Click += new System.EventHandler(this.btnDeleteExp_Click);
          // 
          // btnSaveExp
          // 
@@ -725,6 +729,7 @@
          this.btnSaveExp.TabIndex = 180;
          this.btnSaveExp.Text = "Save";
          this.btnSaveExp.UseVisualStyleBackColor = true;
+         this.btnSaveExp.Click += new System.EventHandler(this.btnSaveExp_Click);
          // 
          // btnNewExp
          // 
@@ -734,6 +739,7 @@
          this.btnNewExp.TabIndex = 179;
          this.btnNewExp.Text = "New";
          this.btnNewExp.UseVisualStyleBackColor = true;
+         this.btnNewExp.Click += new System.EventHandler(this.btnNewExp_Click);
          // 
          // btnFirstExp
          // 
@@ -827,6 +833,7 @@
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(818, 663);
+         this.ControlBox = false;
          this.Controls.Add(this.dtpFinDate);
          this.Controls.Add(this.dtpStartDate);
          this.Controls.Add(this.dtpQualDate);
@@ -909,6 +916,9 @@
          this.Controls.Add(this.lblStaffNo);
          this.Controls.Add(this.btnExit);
          this.Controls.Add(this.lblHeader1);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+         this.MaximizeBox = false;
+         this.MinimizeBox = false;
          this.Name = "FormClassBooking";
          this.Text = "CS3630 - Levon Swenson & Derek Lubecke ";
          this.Load += new System.EventHandler(this.FormClassBooking_Load);

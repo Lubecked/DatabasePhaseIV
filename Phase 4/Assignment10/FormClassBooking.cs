@@ -261,6 +261,81 @@ namespace Assignment10
          {
             System.Windows.Forms.MessageBox.Show(ex.Message);
          }
+         btnSaveEmp_Click(null, null);
+      }
+
+      private void btnNewQual_Click(object sender, EventArgs e)
+      {
+         DataRow r = Oracle.qualTable.NewRow();
+         Oracle.qualTable.Rows.Add(r);
+         qualBindingSource.MoveLast();
+         txtCurQual.Text = (qualBindingSource.Position + 1) + "/" + qualBindingSource.Count;
+      }
+
+      private void btnSaveQual_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            string staffNo = Oracle.staffTable.Rows[staffBindingSource.Position]["StaffNo"].ToString();
+            Oracle.qualTable.Rows[qualBindingSource.Position]["StaffNo"] = staffNo;
+            qualBindingSource.EndEdit();
+            Oracle.qualificationAdapter.Update(Oracle.qualTable);
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnDeleteQual_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            qualBindingSource.RemoveCurrent();
+            txtCurQual.Text = (qualBindingSource.Position + 1) + "/" + qualBindingSource.Count;
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+         btnSaveQual_Click(null, null);
+      }
+
+      private void btnNewExp_Click(object sender, EventArgs e)
+      {
+         DataRow r = Oracle.exTable.NewRow();
+         Oracle.exTable.Rows.Add(r);
+         exBindingSource.MoveLast();
+         txtCurExp.Text = (exBindingSource.Position + 1) + "/" + exBindingSource.Count;
+      }
+
+      private void btnSaveExp_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            string staffNo = Oracle.staffTable.Rows[staffBindingSource.Position]["StaffNo"].ToString();
+            Oracle.exTable.Rows[exBindingSource.Position]["StaffNo"] = staffNo;
+            exBindingSource.EndEdit();
+            Oracle.exAdapter.Update(Oracle.exTable);
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+      }
+
+      private void btnDeleteExp_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            exBindingSource.RemoveCurrent();
+            txtCurExp.Text = (exBindingSource.Position + 1) + "/" + exBindingSource.Count;
+         }
+         catch (System.Exception ex)
+         {
+            System.Windows.Forms.MessageBox.Show(ex.Message);
+         }
+         btnSaveExp_Click(null, null);
       }
    }
 }

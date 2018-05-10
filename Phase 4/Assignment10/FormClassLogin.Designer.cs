@@ -117,6 +117,7 @@
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(825, 393);
+         this.ControlBox = false;
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);
@@ -125,6 +126,9 @@
          this.Controls.Add(this.txtBoxPassword);
          this.Controls.Add(this.txtBoxHost);
          this.Controls.Add(this.txtBoxUsername);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+         this.MaximizeBox = false;
+         this.MinimizeBox = false;
          this.Name = "FormClassLogin";
          this.Text = "Login";
          this.ResumeLayout(false);
