@@ -116,6 +116,8 @@
          this.AcceptButton = this.btnLogin;
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.BackgroundImage = global::Assignment10.Properties.Resources.o_SLEEPY_CAT_WATERMELON_facebook;
+         this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
          this.ClientSize = new System.Drawing.Size(825, 393);
          this.ControlBox = false;
          this.Controls.Add(this.label3);
